@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Papp.DataAccess
 {
-    public class IOrderedPizzasRepository
+    public interface IOrderedPizzasRepository
     {
         OrderedPizzas getIdOrderedPizzas(int id);
 
         OrderedPizzas getOrderIdOrder(int OrderId);
 
-        OrderedPizzas getPizzaIdOrderedPizzas(int PizzaId);
+       OrderedPizzas getPizzaIdOrderedPizzas(int PizzaId);
     }
 }
