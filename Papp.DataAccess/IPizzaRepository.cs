@@ -5,13 +5,13 @@ using System.Collections.Generic;
 
 namespace Papp.DataAccess
 {
-	public interface IOrdersRepository
-	{
-        Orders getUserOrderAddressId();
+	public interface IPizzaRepository
+    {
+        Pizza getPizzaId();
+        Pizza getPizzaName();
+        Pizza getPizzaCosts();
 
-        Orders getStoreAddressId();
 
-        Orders getId();
-         
+
     }
 }
