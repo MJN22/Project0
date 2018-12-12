@@ -14,13 +14,29 @@ namespace Papp.DataAccess
             Db = db;
         }
 
-        public Orders getUserOrderAddressId(int UserOrderAddressId){
-            
-            }
+      
+             public IEnumerable<Orders> getUserOrderAddressId(int UserOrderAddressId){
+        using (var db = new PizzaDB2Context()){
+                return db.Orders.Where(o => o.UserOrderAddressID == UserOrderAddressId);
+            }}
+        public IEnumerable<Orders> getStoreAddressID(int StoreAddressId){
+        using (var db = new PizzaDB2Context()){
+                return db.Orders.Where(o => o.StoreAddressID == StoreAddressId);
+}
+}
+   
+        //need to be using ef clauses dbcontext here
+        
 
-        public Orders getStoreAddressId(int StoreAddressId);
 
-        public Orders getId(int id);
+
+
+        public IEnumerable<Orders> getId(int Id){
+            using (var db = new PizzaDB2Context()) {
+            return db.Orders.Where(o => o.Id ==Id);
+}
+         
+
 
     }
 }
