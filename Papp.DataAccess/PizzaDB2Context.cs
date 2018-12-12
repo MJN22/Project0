@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-
 namespace Papp.DataAccess
 {
     public partial class PizzaDB2Context : DbContext
@@ -28,8 +27,8 @@ namespace Papp.DataAccess
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("server=tcp:noyes1811.database.windows.net,1433;User Id=martin;Password=20Dollars!;Database=PizzaDB2;");
+
+                optionsBuilder.UseSqlServer(SecretConfiguration.ConnectionString);
             }
         }
 
